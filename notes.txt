@@ -1,0 +1,2 @@
+Binary Stuff:
+Binary is Base 2 because only 1 and 0 can be used. each bit can be 1 or 0 and a byte holds 4 bits. Each byte has 16 total combinations and a maximun possible number of 15. this binary is at the core of all computing.
