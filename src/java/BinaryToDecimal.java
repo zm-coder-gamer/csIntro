@@ -22,7 +22,19 @@ public class BinaryToDecimal {
 				break;
 			}
 			System.out.println(binaryNums[i]);
+			int dec = convertbintodec(binaryNums[i]);
+			System.out.println(dec);
 		}
 	}
-	
+	private static int convertbintodec(String bin) {
+		int sum = 0;
+		for (int i = bin.length()-1; i >= 0; i--) {
+			char achar = bin.charAt(i);
+			if (achar == '0') {continue;}
+			Double num = Math.pow(2, bin.length()-i);
+			int converted = num.intValue();
+			sum = sum + converted;
+		}
+		return sum;
+	}
 }
