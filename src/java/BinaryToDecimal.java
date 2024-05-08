@@ -12,10 +12,14 @@ public class BinaryToDecimal {
 			//System.out.println(line);
 			String[] parts = line.split(",");
 			for (int i = 0; i < parts.length; i++) {
+				String bin = parts[i].trim();
 				//System.out.println(parts[i].trim());
-				binaryNums[index] = parts[i].trim();
+				binaryNums[index] = bin;
 				index++;
+				int num = convertbintodec(bin);
+				System.out.print(num + " ");
 			}
+			System.out.println();
 		}
 		for (int i = 0; i < binaryNums.length; i++) {
 			if (binaryNums[i] == null) {
@@ -28,10 +32,12 @@ public class BinaryToDecimal {
 	}
 	private static int convertbintodec(String bin) {
 		int sum = 0;
-		for (int i = bin.length()-1; i >= 0; i--) {
+		int binlength = bin.length()-1;
+		for (int i = binlength; i >= 0; i--) {
 			char achar = bin.charAt(i);
 			if (achar == '0') {continue;}
-			Double num = Math.pow(2, bin.length()-i);
+			
+			Double num = Math.pow(2, binlength-i);
 			int converted = num.intValue();
 			sum = sum + converted;
 		}
