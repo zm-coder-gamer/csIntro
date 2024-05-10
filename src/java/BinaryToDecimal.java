@@ -4,6 +4,10 @@ import java.io.FileNotFoundException;
 
 public class BinaryToDecimal {
 	public static void main(String[] args) throws FileNotFoundException{
+		
+		DecToBin dectobin = new DecToBin();
+		System.out.println(dectobin.convert(10));
+		
 		String [] binaryNums = new String[100];
 		Scanner sc = new Scanner(new File("src/binarydata.txt"));
 		int index = 0;
