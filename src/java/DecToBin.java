@@ -50,7 +50,7 @@ public class DecToBin {
 	private static String reverse(List<Integer> rems) {
 		String returnVal = "";
 		for (int i = rems.size()-1 ; i >= 0; i--) {
-			returnVal += String.valueOf(i);
+			returnVal += String.valueOf(rems.get(i));
 		}
 		
 		return returnVal;
