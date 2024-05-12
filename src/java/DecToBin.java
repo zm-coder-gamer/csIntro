@@ -6,23 +6,25 @@ public class DecToBin {
 		List<Integer> rems = new ArrayList<>();
 		int rem = dec % 2;
 		
-		doIt(rem, dec, rems);
-		dec = dec/2;
-		rem = dec%2;
-		doIt(rem, dec, rems);
-		dec = dec/2;
-		rem = dec%2;
-		doIt(rem, dec, rems);
-		dec = dec/2;
-		rem = dec%2;
-		doIt(rem, dec, rems);
+		while (dec>1){
+			dec = doIt(rem, dec, rems);
+			dec = dec/2;
+			rem = dec%2;
+			dec = doIt(rem, dec, rems);
+			dec = dec/2;
+			rem = dec%2;
+			dec = doIt(rem, dec, rems);
+			dec = dec/2;
+			rem = dec%2;
+			dec = doIt(rem, dec, rems);
+		}
 		System.out.println(rems);
 		String bin = reverse(rems);
 		
 		
 		return bin;
 	}
-	private static void doIt(int rem, int dec, List<Integer> rems) {
+	private static int doIt(int rem, int dec, List<Integer> rems) {
 		if (rem == 1) {
 			dec--;
 			rems.add(rem);
@@ -30,6 +32,7 @@ public class DecToBin {
 		else {
 			rems.add(0);
 		}
+		return dec;
 	}
 	private static String reverse(List<Integer> rems) {
 		String returnVal = "";
