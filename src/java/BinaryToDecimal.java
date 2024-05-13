@@ -6,7 +6,7 @@ public class BinaryToDecimal {
 	public static void main(String[] args) throws FileNotFoundException{
 		
 		DecToBin dectobin = new DecToBin();
-		String newbin = dectobin.convert(10);
+		String newbin = dectobin.convert(99);
 		System.out.println(newbin);
 		int newdec = convertbintodec(newbin);
 		System.out.println(newdec);
