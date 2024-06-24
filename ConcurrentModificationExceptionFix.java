@@ -1,3 +1,7 @@
+//The concurrent modificaiton exception occurs when you try to 
+//modify and array while looping through it
+//to avoid this we will remove the item outside the loop
+
 import java.util.ArrayList;
 import java.util.List;
 
