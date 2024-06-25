@@ -19,19 +19,19 @@ public class ConcurrentModificationExceptionFix {
     System.out.println(names);
     //condition to set in the for loop
     //loop
-    boolean removeZiad2 = false;
-    for (String name : names) {
-      try {
-        names.remove("Ziad2");
-      } catch (ConcurrentModificationException e) {
-        System.out.println("Cannot modify a list when list is part of the condition in the for loop.");
-        removeZiad2 = true;
+    String nametodelete = "";
+    try {
+      for (String name : names) {
+        if (name.contains("1")) {
+          nametodelete = name;
+          names.remove(name);
+        }
       }
     }
-    if (removeZiad2) {
-      System.out.println("Safely modify the list by modifying it outside the loop.");
-      names.remove("Ziad2");
+    catch (ConcurrentModificationException e) {
+      System.out.println("Caught ConcurrentModificationException while deleting [" + nametodelete + "]");
     }
+
     System.out.println(names);
   }
 }
